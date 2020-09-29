@@ -70,8 +70,6 @@ var amqp = require('amqplib');
               setTimeout(() => {
                 changeState()
               }, 30010);
-            }else{
-              send_feedback("CALL ALREDY MADE!");
             }
         };
         
