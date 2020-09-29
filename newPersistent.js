@@ -1,7 +1,7 @@
 var amqp = require('amqplib');
 var db = require('./persistent');
 
-var ACK = 2;
+var ACK = 3;
 
 amqp.connect('amqp://guest:guest@192.168.1.103:5672').then(function(conn) {
   process.once('SIGINT', function() { conn.close(); });
@@ -11,13 +11,13 @@ amqp.connect('amqp://guest:guest@192.168.1.103:5672').then(function(conn) {
 
     ok = ok.then(function(_qok) {        
       return ch.consume('iot/logs', function(msg) {
-        if(ACK == 2){
+        if(ACK == 3){
               db.databaseInsert();
               ACK--;
-        } else if (ACK == 1){
+        } else if (ACK == 0){
+          ACK=3;
+        }else {
           ACK--;
-        }else if (ACK == 0){
-          ACK=2;
         }
         console.log(" [x] Received '%s'", msg.content.toString()+"value:"+ACK);
       }, {noAck: true});
