@@ -1,0 +1,22 @@
+metadata:
+  name: sendsignal
+  labels:
+    nuclio.io/project-name: ab4cf5d4-8997-4c8f-9961-3d4ba6d198d0
+spec:
+  handler: "main:handler"
+  runtime: nodejs
+  resources: {}
+  image: "nuclio/processor-sendsignal:latest"
+  minReplicas: 1
+  maxReplicas: 1
+  targetCPU: 75
+  build:
+    functionSourceCode: dmFyIG1xdHQgPSByZXF1aXJlKCdtcXR0JyksIHVybCA9IHJlcXVpcmUoJ3VybCcpOw0KDQp2YXIgbXF0dF91cmwgPSB1cmwucGFyc2UocHJvY2Vzcy5lbnYuQ0xPVURBTVFQX01RVFRfVVJMIHx8ICdtcXR0Oi8vZ3Vlc3Q6Z3Vlc3RAMTkyLjE2OC4xLjEwMzoxODgzJyk7DQp2YXIgYXV0aCA9IChtcXR0X3VybC5hdXRoIHx8ICc6Jykuc3BsaXQoJzonKTsNCnZhciB1cmwgPSAibXF0dDovLyIgKyBtcXR0X3VybC5ob3N0Ow0KDQp2YXIgb3B0aW9ucyA9IHsNCiAgcG9ydDogbXF0dF91cmwucG9ydCwNCiAgY2xpZW50SWQ6ICdtcXR0anNfJyArIE1hdGgucmFuZG9tKCkudG9TdHJpbmcoMTYpLnN1YnN0cigyLCA4KSwNCiAgdXNlcm5hbWU6IGF1dGhbMF0sDQogIHBhc3N3b3JkOiBhdXRoWzFdLA0KfTsNCg0KZXhwb3J0cy5oYW5kbGVyID0gZnVuY3Rpb24oY29udGV4dCwgZXZlbnQpIHsNCiAgICB2YXIgY2xpZW50ID0gbXF0dC5jb25uZWN0KHVybCwgb3B0aW9ucyk7DQogICAgDQogICAgY2xpZW50Lm9uKCdjb25uZWN0JywgZnVuY3Rpb24oKSB7DQogICAgICAgIGNsaWVudC5wdWJsaXNoKCdpb3Qvc2Vuc29ycy90cmFmZmljTGlnaHRzJywgIjEiLCBmdW5jdGlvbigpIHsNCiAgICAgICAgICAgICAgICAgICAgY2xpZW50LmVuZCgpOyANCiAgICAgICAgICAgICAgICAgICAgY29udGV4dC5jYWxsYmFjaygnTVFUVCBNZXNzYWdlIFNlbnQnKTsNCiAgICAgICAgICAgICAgICB9ICk7DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgDQogICAgICAgIH0pOyAgICAgICAgDQogICAgDQp9Ow==
+    commands:
+      - 'npm install mqtt'
+    runtimeAttributes:
+      repositories: []
+    codeEntryType: sourceCode
+  platform: {}
+  readinessTimeoutSeconds: 60
+  version: 1
