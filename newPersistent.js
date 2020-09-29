@@ -14,7 +14,9 @@ amqp.connect('amqp://guest:guest@192.168.1.103:5672').then(function(conn) {
         if(ACK == 2){
               db.databaseInsert();
               ACK--;
-        } else if (ACK == 0){
+        } else if (ACK == 1){
+          ACK--;
+        }else if (ACK == 0){
           ACK=2;
         }
         console.log(" [x] Received '%s'", msg.content.toString());
