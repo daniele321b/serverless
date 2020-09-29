@@ -21,7 +21,6 @@ var con = mysql.createConnection({
 module.exports = {
   databaseInsert: function(){
     con.connect(function(err) {
-     // if (err) throw err;
       console.log("Database connected!");
       con.query(insertData, function (err, result) {
         if (err) throw err;

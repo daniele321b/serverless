@@ -19,7 +19,7 @@ amqp.connect('amqp://guest:guest@192.168.1.103:5672').then(function(conn) {
         }else {
           ACK--;
         }
-        console.log(" [x] Received '%s'", msg.content.toString()+"value:"+ACK);
+        console.log(" [x] Received '%s'", msg.content.toString());
       }, {noAck: true});
     });
     
